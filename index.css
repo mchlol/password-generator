@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap');
+
+:root {
+    --bgColour: #1F2937;
+    --primaryColour: #fff;
+    --accentColour: #4ADF86;
+    --tertiaryColour: #10B981;
+    --borderColour: #2F3E53;
+    --passBgColour: #273549;
+    --karla: 'Karla', sans-serif;
+    --inter: 'Inter', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--primaryColour);
+    background: var(--bgColour);
+    font-family: var(--inter);
+    font-weight: 500;
+}
+
+h1 {
+    font-family: var(--karla);
+    font-size: 40px;
+}
+
+.content {
+    max-width: 30em;
+    margin: 2em auto;
+}
+
+.content span {
+    color: var(--accentColour);
+}
+
+.content p {
+    font-weight: 400;
+    font-size: 1.25rem; 
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.5em;
+}
+
+button {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--tertiaryColour);
+    color: var(--primaryColour);
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    max-width: 211px;
+}
+
+label, legend {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+input {
+    border: 1px solid var(--borderColour);
+    border-radius: 5px;
+    width: 40px;
+}
+
+fieldset {
+    margin-top: .5em;
+    width: fit-content;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1em;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: var(--tertiaryColour);
+}
+
+.error-msg {
+    font-size: small!important;
+    color: var(--accentColour);
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid var(--borderColour);
+    margin: 1em 0; 
+}
+
+.passwords-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+.password {
+    background-color: var(--passBgColour);
+    width: 211px;
+    height: 39px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+.cursor-point {
+    cursor: pointer;
+}

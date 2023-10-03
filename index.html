@@ -6,13 +6,14 @@
     <link rel="icon" href="#">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
     <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/1aa887c412.js" crossorigin="anonymous"></script>
+    <title>Password Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 
 <body>
     <div class="content">
         <h1>Generate a<br> <span>random password</span></h1>
-        <p>Never use an insecure password again.</p>
+        <p>Never use an insecure password again. </p>
 
         <hr>
 
@@ -46,9 +47,15 @@
         <hr>
 
         <div class="passwords-container">
-            <div id="password-display-1" class="password tooltip">
+            <div class="display--container">
+                <div id="password-display-1" class="password">
+                </div>
+                <span id="copy1" class="material-symbols-outlined">content_copy</span>
             </div>
-            <div id="password-display-2" class="password tooltip">
+            <div class="display--container">
+                <div id="password-display-2" class="password">
+                </div>
+                <span id="copy2" class="material-symbols-outlined">content_copy</span>
             </div>
         </div>
 

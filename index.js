@@ -90,18 +90,10 @@ passwordDisplays.forEach(display => display.addEventListener('click',copy));
 
 function confirmCopy(element) {
 
-    let tooltip = document.createElement('span');
-    tooltip.textContent = 'Copied!'
-    tooltip.classList.add('visible');
-    tooltip.classList.remove('hidden');
-    tooltip.classList.add('tooltiptext');
-
     if (element.id === 'password-display-1') {
-        passwordDisplay1.appendChild(tooltip);
+        document.querySelector('#copy1').textContent = 'done';
     } else if (element.id === 'password-display-2') {
-        passwordDisplay2.appendChild(tooltip)
-    } else {
-        console.log('Could not display tooltip')
-    }
+        document.querySelector('#copy2').textContent = 'done';
+    } 
 
 }

@@ -11,6 +11,14 @@
     --inter: 'Inter', sans-serif;
 }
 
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -100,45 +108,24 @@ hr {
 }
 
 .password {
-    background-color: var(--passBgColour);
-    width: 211px;
-    height: 39px;
-    border-radius: 8px;
+    /* border: 1px solid yellow; */
+    flex: 0 0 auto;
+    width: 190px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 0 0 auto;
 }
 
 .cursor-point {
     cursor: pointer;
 }
 
-.tooltip {
-    position: relative;
-}
-
-.tooltip .tooltiptext {
-    font-size: small;
-    background-color: var(--tertiaryColour);
-    color: var(--bgColour);
-    text-align: center;
-    padding: 0.25em .5em;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-    top: -20px;
-    right: 5px;
-}
-
-.tooltiptext {
-    visibility: hidden;
-}
-
-.visible {
-    visibility: visible;
-}
-
-.hidden {
-    visibility: hidden;
+.display--container {
+    background-color: var(--passBgColour);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: .5em;
 }

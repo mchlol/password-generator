@@ -37,7 +37,7 @@ h1 {
 
 .content p {
     font-weight: 400;
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
 }
 
 form {
@@ -56,7 +56,8 @@ button {
     max-width: 211px;
 }
 
-label, legend {
+label,
+legend {
     font-weight: 400;
     font-size: 14px;
 }
@@ -80,14 +81,14 @@ input[type="checkbox"]:checked {
 }
 
 .error-msg {
-    font-size: small!important;
+    font-size: small !important;
     color: var(--accentColour);
 }
 
 hr {
     border: none;
     border-bottom: 1px solid var(--borderColour);
-    margin: 1em 0; 
+    margin: 1em 0;
 }
 
 .passwords-container {
@@ -111,4 +112,33 @@ hr {
 
 .cursor-point {
     cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    font-size: small;
+    background-color: var(--tertiaryColour);
+    color: var(--bgColour);
+    text-align: center;
+    padding: 0.25em .5em;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    right: 5px;
+}
+
+.tooltiptext {
+    visibility: hidden;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
 }

@@ -10,6 +10,7 @@ const passwordDisplay2 = document.querySelector('#password-display-2');
 const form = document.querySelector('form');
 const errorMsg = document.querySelector('.error-msg');
 let passwordDisplays = document.querySelectorAll('.password');
+const tooltips = document.querySelectorAll('.tooltiptext');
 
 function getRand(array) {
     return Math.floor(Math.random() * array.length);
@@ -75,13 +76,32 @@ function copy(event) {
         return;
     } else if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(text).then( () => {
-            console.log('copied');
+            confirmCopy(event.target);
+            
         }, (error) => {
             console.log(error.message);
         })
     } else {
-        console.log('There was a problem')
+        console.log('Could not copy to clipboard')
     }
 }
 
 passwordDisplays.forEach(display => display.addEventListener('click',copy));
+
+function confirmCopy(element) {
+
+    let tooltip = document.createElement('span');
+    tooltip.textContent = 'Copied!'
+    tooltip.classList.add('visible');
+    tooltip.classList.remove('hidden');
+    tooltip.classList.add('tooltiptext');
+
+    if (element.id === 'password-display-1') {
+        passwordDisplay1.appendChild(tooltip);
+    } else if (element.id === 'password-display-2') {
+        passwordDisplay2.appendChild(tooltip)
+    } else {
+        console.log('Could not display tooltip')
+    }
+
+}

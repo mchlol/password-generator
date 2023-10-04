@@ -15,7 +15,7 @@ const passwordDisplays = document.querySelectorAll('.display--container');
 const modeIcon = document.querySelector('#toggle-mode');
 
 // colour theme default
-let activeTheme = 'dark';
+let activeMode = 'dark';
 
 // get all clickable password bits
 const copyEls = document.querySelectorAll('.copy-el')
@@ -142,7 +142,7 @@ btn.addEventListener('click', handleSubmit);
 copyEls.forEach(btn => btn.addEventListener('click',copy));
 
 // colour theme switcher
-function swapTheme() {
+function toggleMode() {
     // get the root element where css variables are defined
     const root = document.querySelector(':root');
     // get access to the styles
@@ -172,9 +172,9 @@ function swapTheme() {
 
 
     // ternary to swap between two themes - if its dark make it light, if its not dark make it dark
-    activeTheme === 'dark' ? activeTheme = 'light' : activeTheme = 'dark';
+    activeMode === 'dark' ? activeMode = 'light' : activeMode = 'dark';
 
-    if (activeTheme === 'dark') {
+    if (activeMode === 'dark') {
         // change switch icon textContent to 'dark_mode'
         modeIcon.textContent = 'dark_mode';
         root.style.setProperty('--bgColour', '#1F2937');
@@ -182,7 +182,7 @@ function swapTheme() {
         root.style.setProperty('--accentColour', '#4ADF86');
         root.style.setProperty('--borderColour', '#2F3E53');
 
-    } else if (activeTheme === 'light') {
+    } else if (activeMode === 'light') {
         // change switch icon textContent to 'light_mode'
         modeIcon.textContent = 'light_mode';
         root.style.setProperty('--bgColour', '#ECFDF5');
@@ -196,4 +196,4 @@ function swapTheme() {
 }
 
 // swap the icon from light to dark?
-modeIcon.addEventListener('click', swapTheme);
+modeIcon.addEventListener('click', toggleMode);

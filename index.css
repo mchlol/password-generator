@@ -2,11 +2,12 @@
 
 :root {
     --bgColour: #1F2937;
-    --primaryColour: #fff;
+    --textColour: #fff;
     --accentColour: #4ADF86;
-    --tertiaryColour: #10B981;
+    --btnColour: #10B981;
     --borderColour: #2F3E53;
     --passBgColour: #273549;
+    --passTxtColour: #5DEF92;
     --karla: 'Karla', sans-serif;
     --inter: 'Inter', sans-serif;
 }
@@ -23,7 +24,7 @@ body {
     margin: 1em;
     padding: 0;
     box-sizing: border-box;
-    color: var(--primaryColour);
+    color: var(--textColour);
     background: var(--bgColour);
     font-family: var(--inter);
     font-weight: 500;
@@ -57,8 +58,8 @@ form {
 button {
     border: none;
     border-radius: 6px;
-    background-color: var(--tertiaryColour);
-    color: var(--primaryColour);
+    background-color: var(--btnColour);
+    color: var(--textColour);
     padding: 0.5em 1em;
     margin: 1em 0;
     max-width: 211px;
@@ -85,7 +86,7 @@ fieldset {
 }
 
 input[type="checkbox"]:checked {
-    accent-color: var(--tertiaryColour);
+    accent-color: var(--btnColour);
 }
 
 .error-msg {
@@ -123,6 +124,7 @@ hr {
 
 .display--container {
     background-color: var(--passBgColour);
+    color: var(--passTxtColour);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;

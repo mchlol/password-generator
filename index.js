@@ -11,9 +11,10 @@ const passwordDisplay1 = document.querySelector('#password-display-1');
 const passwordDisplay2 = document.querySelector('#password-display-2');
 const form = document.querySelector('form');
 const errorMsg = document.querySelector('.error-msg');
-//are these necessary?
-let passwordDisplays = document.querySelectorAll('.display--container');
-const copyBtns = document.querySelectorAll('.copy-btn');
+const passwordDisplays = document.querySelectorAll('.display--container')
+
+// colour theme default
+let activeTheme = 'dark';
 
 // get all clickable password bits
 const copyEls = document.querySelectorAll('.copy-el')
@@ -138,3 +139,52 @@ function confirmCopy(element) {
 
 btn.addEventListener('click', handleSubmit);
 copyEls.forEach(btn => btn.addEventListener('click',copy));
+
+// colour theme switcher
+function swapTheme() {
+    // get the root element where css variables are defined
+    const root = document.querySelector(':root');
+    // get access to the styles
+    const rootStyle = getComputedStyle(root);
+
+
+    /* variables
+    --bgColour: dark #1F2937, light #ECFDF5
+    --textColour: dark #fff, light #2B283A
+    --accentColour: dark #4ADF86, light #10B981
+    --btnColour: #10B981; (SAME)
+    --borderColour: dark #2F3E53, light #D5D4D8
+    --passBgColour: #273549; (SAME)
+    */
+
+    // store reference to the properties
+    // TODO: is this necessary???
+    let bgColour = rootStyle.getPropertyValue('--bgColour');
+    let textColour = rootStyle.getPropertyValue('--textColour');
+    let accentColour = rootStyle.getPropertyValue('--accentColour');
+    let borderColour = rootStyle.getPropertyValue('--borderColour');
+
+
+    // ternary to swap between two themes - if its dark make it light, if its not dark make it dark
+    activeTheme === 'dark' ? activeTheme = 'light' : activeTheme = 'dark';
+
+    if (activeTheme === 'dark') {
+        // set variables
+        // change style property to something else (first arg is property, second arg is the new value)
+        root.style.setProperty('--bgColour', '#1F2937');
+        root.style.setProperty('--textColour', '#fff');
+        root.style.setProperty('--accentColour', '#4ADF86');
+        root.style.setProperty('--borderColour', '#2F3E53');
+
+    } else if (activeTheme === 'light') {
+        // set variables
+        root.style.setProperty('--bgColour', '#ECFDF5');
+        root.style.setProperty('--textColour', '#2B283A');
+        root.style.setProperty('--accentColour', '#10B981');
+        root.style.setProperty('--borderColour', '#D5D4D8');
+    } else {
+        console.log('Error setting theme')
+    }
+    
+
+}

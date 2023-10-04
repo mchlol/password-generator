@@ -112,19 +112,23 @@ function copy(event) {
 
 // passes the element that was clicked 
 function confirmCopy(element) {
+    // we need the number so take off the last character in the string and use that as the identifier (1 or 2)
+    const num = element.id[element.id.length - 1];
+
     // change the icon to a tick
-    if (element.id === 'copy1') {
-        element.textContent = 'done';
-    } else if (element.id === 'copy2') {
-        element.textContent = 'done';
+    if (num === '1') {
+        document.querySelector('#copy1').textContent = 'done';
+    } else if (num === '2') {
+        document.querySelector('#copy2').textContent = 'done';
     } 
 
     // change the icon back to clipboard after 1 second
+    //  not very DRY
     setTimeout(() => {
-        if (element.id === 'copy1') {
-            element.textContent = 'content_copy';
-        } else if (element.id === 'copy2') {
-            element.textContent = 'content_copy';
+        if (num === '1') {
+            document.querySelector('#copy1').textContent = 'content_copy';
+        } else if (num === '2') {
+            document.querySelector('#copy2').textContent = 'content_copy';
         } 
     },1000);
 

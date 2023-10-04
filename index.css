@@ -136,3 +136,7 @@ hr {
     align-items: center;
     padding-right: .5em;
 }
+
+#toggle-mode {
+    cursor: pointer;
+}

@@ -11,7 +11,8 @@ const passwordDisplay1 = document.querySelector('#password-display-1');
 const passwordDisplay2 = document.querySelector('#password-display-2');
 const form = document.querySelector('form');
 const errorMsg = document.querySelector('.error-msg');
-const passwordDisplays = document.querySelectorAll('.display--container')
+const passwordDisplays = document.querySelectorAll('.display--container');
+const modeIcon = document.querySelector('#toggle-mode');
 
 // colour theme default
 let activeTheme = 'dark';
@@ -147,6 +148,8 @@ function swapTheme() {
     // get access to the styles
     const rootStyle = getComputedStyle(root);
 
+    // ease the background colour transition only when switching themes
+    document.querySelector('body').style = ('transition: background-color 0.5s');
 
     /* variables
     --bgColour: dark #1F2937, light #ECFDF5
@@ -164,20 +167,24 @@ function swapTheme() {
     let accentColour = rootStyle.getPropertyValue('--accentColour');
     let borderColour = rootStyle.getPropertyValue('--borderColour');
 
+    const switchDark = document.querySelector('#switch-dark');
+    const switchLight = document.querySelector('#switch-light');
+
 
     // ternary to swap between two themes - if its dark make it light, if its not dark make it dark
     activeTheme === 'dark' ? activeTheme = 'light' : activeTheme = 'dark';
 
     if (activeTheme === 'dark') {
-        // set variables
-        // change style property to something else (first arg is property, second arg is the new value)
+        // change switch icon textContent to 'dark_mode'
+        modeIcon.textContent = 'dark_mode';
         root.style.setProperty('--bgColour', '#1F2937');
         root.style.setProperty('--textColour', '#fff');
         root.style.setProperty('--accentColour', '#4ADF86');
         root.style.setProperty('--borderColour', '#2F3E53');
 
     } else if (activeTheme === 'light') {
-        // set variables
+        // change switch icon textContent to 'light_mode'
+        modeIcon.textContent = 'light_mode';
         root.style.setProperty('--bgColour', '#ECFDF5');
         root.style.setProperty('--textColour', '#2B283A');
         root.style.setProperty('--accentColour', '#10B981');
@@ -186,5 +193,7 @@ function swapTheme() {
         console.log('Error setting theme')
     }
     
-
 }
+
+// swap the icon from light to dark?
+modeIcon.addEventListener('click', swapTheme);

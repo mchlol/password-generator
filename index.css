@@ -20,6 +20,11 @@
         'opsz' 24
 }
 
+nav {
+    text-align: right;
+    margin: 1em;
+}
+
 body {
     margin: 1em;
     padding: 0;

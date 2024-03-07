@@ -87,17 +87,14 @@ function copy(event) {
     let el;
 
     if (node === 'SPAN') {
-        console.log('span clicked');
         el = event.target.previousElementSibling;
     } else if (node === 'DIV') {
-        console.log('div clicked');
         el = event.target;
     } else {
         console.log('Node: ', node)
     }
 
     const text = el.textContent;
-    console.log(text);
     if (text === '') {
         return;
     } else if (navigator.clipboard && window.isSecureContext) {
